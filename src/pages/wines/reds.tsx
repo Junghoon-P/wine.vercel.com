@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
-import { useWineData } from "../../hooks/useWineData";
-import { Wine } from "../../types/Wine";
+import { useWineData } from "../../hooks";
+import { Wine } from "../../types";
 import { WineCard, Error, Loading } from "../../components";
 
 const Reds: NextPage = () => {
@@ -17,7 +17,9 @@ const Reds: NextPage = () => {
       <main>
         {data.map((wineData: Wine) => {
           const { id } = wineData;
-          return <WineCard key={`port-wine-list-${id}`} wineData={wineData} />;
+          return (
+            <WineCard key={`${name}-wine-list-${id}`} wineData={wineData} />
+          );
         })}
       </main>
     </div>

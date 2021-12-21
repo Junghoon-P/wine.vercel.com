@@ -1,4 +1,4 @@
-import { Wine } from "../types/Wine";
+import { Wine } from "../types";
 
 interface WineProps {
   wineData: Wine;

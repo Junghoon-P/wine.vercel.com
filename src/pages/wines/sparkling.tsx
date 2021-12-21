@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
-import { useWineData } from "../../hooks/useWineData";
-import { Wine } from "../../types/Wine";
+import { useWineData } from "../../hooks";
+import { Wine } from "../../types";
 import { WineCard, Error, Loading } from "../../components";
 
 const Sparkling: NextPage = () => {
