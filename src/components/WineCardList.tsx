@@ -15,7 +15,7 @@ const WineCardList = ({ name }: WineCardListProps) => {
   if (!data) return <Loading />;
 
   return (
-    <div>
+    <>
       <WineTitle>Port</WineTitle>
       <WineCardContainer>
         {data.map((wineData: Wine) => {
@@ -25,7 +25,7 @@ const WineCardList = ({ name }: WineCardListProps) => {
           );
         })}
       </WineCardContainer>
-    </div>
+    </>
   );
 };
 
@@ -33,10 +33,12 @@ export default WineCardList;
 
 const WineTitle = styled.h1`
   line-height: 180%;
+  border-bottom: 1px solid #eee;
 `;
 
 const WineCardContainer = styled.main`
   display: grid;
+  gap: 1em;
 
   @media (min-width: ${MEDIA_QUERY_END_POINT.MOBILE}) {
     grid-template-columns: repeat(2, 1fr);
