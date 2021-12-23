@@ -1,29 +1,14 @@
 import type { NextPage } from "next";
-import { useWineData } from "../../hooks";
-import { Wine } from "../../types";
-import { WineCard, Error, Loading } from "../../components";
+import WineCardList from "../../components/WineCardList";
 
-const Rose: NextPage = () => {
+const Port: NextPage = () => {
   const name = "rose";
-  //useSwr은 hooks이기 때문에 CSR에서만 가능하다. SSR 불가
-  const { data, error } = useWineData(name);
-
-  if (error) return <Error />;
-  if (!data) return <Loading />;
 
   return (
-    <div>
-      <h1>Rose</h1>
-      <main>
-        {data.map((wineData: Wine) => {
-          const { id } = wineData;
-          return (
-            <WineCard key={`${name}-wine-list-${id}`} wineData={wineData} />
-          );
-        })}
-      </main>
-    </div>
+    <>
+      <WineCardList name={name} />
+    </>
   );
 };
 
-export default Rose;
+export default Port;
